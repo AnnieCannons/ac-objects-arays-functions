@@ -36,6 +36,19 @@ This workshop will be a traditional format, a combination of live lectures and e
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<style type="text/css">
+			button {
+				width: 20%;
+				font-size: 20px;
+			}
+			textarea {
+				width: 90%; 
+				height: 7em; 
+				border: 1px solid black; 
+				padding: .2em .4em; 
+				font-size: 20px;
+			}
+		</style>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -107,7 +120,7 @@ box.length;
 				</section>
 				<section>
 					<h3>Iteration</h3>
-					<textarea id="code" class="code" name="code" mode="javascript" runnable="true" cols="30" rows="10">
+					<textarea id="code" class="code" name="code" mode="javascript" runnable="true">
 var box = ['meow', 'Whoohooo!'];
 for(var i = 0; i < box.length; i++){
 						
@@ -119,13 +132,13 @@ for(var i = 0; i < box.length; i++){
 
 				</section>
 				<section>
-					<h3>Exercise Time</h3>
-					<p>Use a for loop to output: "quack! sneeze! boom!"</p>
-					<textarea id="code" class="code" name="code" mode="javascript" runnable="true" cols="30" rows="10">
+					<h3><a href="https://jsfiddle.net/yonet3d/p82g5mv1/" target="_blank">Exercise Time</a></h3>
+					<!-- <p>Use a for loop to output: "quack! sneeze! boom!"</p>
+					<textarea id="code" class="code" name="code" mode="javascript" runnable="true">
 						var noisesArray = ["quack", "sneeze", "boom"];
 
 					</textarea>
-					<button>Run</button>
+					<button>Run</button> -->
 
 				</section>
 				<!-- /Arrays -->
@@ -233,13 +246,16 @@ var theAngelCats = [
 				</section>
 				<section>
 				<pre><code data-trim>
+
 theAngelCats[0].name = ;//?
+
 theAngelCats[2]["Fur Color"] = ;//?
+
 					</code></pre>
 				</section>
 				<section>
 					<h3><a href="https://jsfiddle.net/yonet3d/j0aebpc7/1/" target="_blank">Exercise Time</a></h3>
-					<a href="http://en.wikipedia.org/wiki/List_of_animal_sounds" target="_blank">Useful Link</a>
+					<a href="http://en.wikipedia.org/wiki/List_of_animal_sounds" target="_blank">A Useful Link</a>
 				</section>
 				<!-- /Arrays of Objects -->
 
@@ -291,7 +307,7 @@ for(var key in zoo) {
 
 				<!-- Functions -->
 				<section>
-					<h3>Functions</h3>
+					<h2>Functions</h2>
 					<pre><code data-trim>
 var add = function(a, b) {
 	return a + b;
@@ -336,19 +352,118 @@ nameImprover("Pamela", "shiny");
 nameImprover("Aysegul", "fancy");
 					</pre></code>
 				</section>
+				<section>
+					<h3>Return/Side Effects</h3>
+					<pre><code data-trim>
+var nameImprover = function (name, adj) {
+  return 'Col ' + name + ' Mc' + adj + ' pants';
+};	
+
+var nameLogger = function (name, adj) {
+	var newName = 'Col ' + name + ' Mc' + adj + ' pants';
+  	console.log(newName); 
+};	
+					</pre></code>
+
+				</section>
+				<section>
+					<h3>arguments Keyword</h3>
+					<pre><code data-trim>
+var add = function(a, b){
+	console.log(arguments); //logs [3,10]
+	return a + b; 
+};
+add(3, 10);//13	
+					</pre></code>
+
+				</section>
+				<section>
+					<h3>Defaulting Arguments</h3>
+					<pre><code data-trim>
+var nameLogger = function (name, adj) {
+	if(!name) var name = "Anonymous";
+	var newName = 'Col ' + name + ' Mc' + adj + ' pants';
+  	console.log(newName); 
+};
+					</pre></code>
+
+				</section>
+				<section>
+					<h3><a href="https://jsfiddle.net/yonet3d/qg85rm8q/" target="_blanl">Exercise Time</a></h3>
+				</section>
+				<section>
+					<h3>Scope</h3>
+				</section>
+				<section>
+					<h3>Local Scope</h3>
+					<pre><code data-trim>
+var func = function(){
+  var local = true;
+};
+
+console.log(local);
+					</code></pre>
+				</section>
+				<section>
+					<h3>Global Scope</h3>
+					<pre><code data-trim>
+var global = "I'm available everywhere.";
+
+var func = function(){
+  var local = "I'm available inside this function.";
+  console.log("I'm available inside the function ", global);
+};
+
+console.log(global);
+					</code></pre>
+				</section>
+				<section>
+					<pre><code data-trim>
+var global = "I'm available everywhere.";
+
+var func = function(){
+  local = "I'm available everywhere too";
+};
+
+console.log(local);
+					</code></pre>
+					
+				</section>
+				<section>
+					<pre><code data-trim>
+function blender(fruit) { 
+  var b = fruit; 
+  var y = 'yogurt';
+ 
+  function bs() { 
+    alert( b + ' and ' + y + ' makes ' + b + ' swirl'); 
+  } 
+  bs(); 
+} 
+
+blender('blueberry');
+					</code></pre>
+				</section>
+				<section>
+					<h3>Precedence</h3>
+					<pre><code data-trim>
+var g = "global";
+
+function go() { 
+  var l = "local";
+  var g = "in here!";
+  alert(g + " inside go");
+}
+
+go();
+alert(g + " outside go");
+					</code></pre>
+				</section>
 				<!-- /Functions -->
 
-				<!-- <section>
-					<textarea id="code" class="code" name="code" mode="javascript" runnable="true">
-						console.log("hello")
-					</textarea>
-					<button>Run</button>
-					
-				</section> -->
-				
-
-					
-
+				<section>
+					<h1>Questions</h1>
+				</section>
 			</div>
 
 		</div>
