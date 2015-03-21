@@ -21,10 +21,11 @@ This workshop will be a traditional format, a combination of live lectures and e
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 		<!-- CodeMirror links -->
-		<script src="lib/codemirror.js"></script>
-		<link rel="stylesheet" href="js/lib/css/codemirror.css">
-		<script src="lib/js/javascript/javascript.js"></script>
-		<script src="js/addon/runmode/runmode.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/lib/js/codemirror.js"></script>
+		<link rel="stylesheet" href="/lib/css/codemirror.css">
+		<script src="/lib/js/javascript/javascript.js"></script>
+		<script src="/lib/js/addon/runmode/runmode.js"></script>
 		<!--  <script src="../mode/xml/xml.js"></script> -->
 		<!-- /CodeMirror links -->
 
@@ -90,13 +91,8 @@ This workshop will be a traditional format, a combination of live lectures and e
 				</section>
 				<section>
 					<h3>Access and Assignment</h3>
-					<!-- <pre><code data-trim>
-var box = [];
-						
-box[0] = 'woof';						
-box[1] = 'meow';
-					</code></pre> -->
-					<textarea id="code" class="code" name="code" mode="javascript" runnable="true">
+					
+					<textarea id="code" class="code runnable" name="code" mode="javascript" >
 var box = [];
 box[0] = 'woof';						
 box[1] = 'meow';
@@ -104,23 +100,23 @@ box.push['moo'];
 box.pop();
 
 					</textarea>
-					<button>Run</button>
+					<!-- <button>Run</button> -->
 
 				</section>
 				<!-- TODO runnable -->
 				<section>
-					<pre><code data-trim>
+					<textarea id="code" class="code runnable" name="code" mode="javascript" >
 
 var i = 0;
 box[i]; // ??
 box[1];
 box.pop(); //??
 box.length;
-					</code></pre>
+					</textarea>
 				</section>
 				<section>
 					<h3>Iteration</h3>
-					<textarea id="code" class="code" name="code" mode="javascript" runnable="true">
+					<textarea id="code" class="code runnable" name="code" mode="javascript" runnable="true">
 var box = ['meow', 'Whoohooo!'];
 for(var i = 0; i < box.length; i++){
 						
@@ -128,17 +124,10 @@ for(var i = 0; i < box.length; i++){
 						
 }
 					</textarea>
-					<button>Run</button>
 
 				</section>
 				<section>
 					<h3><a href="https://jsfiddle.net/yonet3d/p82g5mv1/" target="_blank">Exercise Time</a></h3>
-					<!-- <p>Use a for loop to output: "quack! sneeze! boom!"</p>
-					<textarea id="code" class="code" name="code" mode="javascript" runnable="true">
-						var noisesArray = ["quack", "sneeze", "boom"];
-
-					</textarea>
-					<button>Run</button> -->
 
 				</section>
 				<!-- /Arrays -->
@@ -166,10 +155,10 @@ var box = {"material" : "cardboard"};
 				</section>
 				<section>
 					<h3>Access w/dots</h3>
-					<textarea id="code" class="code" name="code" mode="javascript" runnable="true">
+					<textarea id="code" class="code runnable" name="code" mode="javascript" >
 
 var box = {};
-    					
+						
 box.material = "cardboard";
 						
 var cb = box.material;
@@ -180,7 +169,7 @@ box.material = "titanium";
 
 cb; //??
 					</textarea>
-					<button>Run</button>
+					<!-- <button>Run</button> -->
 					<aside class="notes">
 						q: What is the new value after changing it?
 					</aside>
@@ -194,7 +183,7 @@ box["1234"] = 1234;
 				</section>
 				<section>
 					<h3>Variables</h3>
-					<textarea id="code" class="code" name="code" mode="javascript" runnable="true">
+					<textarea id="code" class="code runnable" name="code" mode="javascript" >
 var box = {};
 						
 box["material"] = "cardboard";
@@ -202,9 +191,9 @@ box["material"] = "cardboard";
 						
 var key = "material";
 						
-box[key]; //??
+PrintLn(box[key]); //??
 					</textarea>
-					<button>Run</button>
+					<!-- <button>Run</button> -->
 				</section>
 				<section>
 					<h3>Object Literals</h3>
@@ -297,7 +286,6 @@ for(var key in zoo) {
 	console.log(zoo[key], key);
 }
 					</pre></code>
-					<button>Run</button>
 
 				</section>
 				<section>
@@ -361,7 +349,7 @@ var nameImprover = function (name, adj) {
 
 var nameLogger = function (name, adj) {
 	var newName = 'Col ' + name + ' Mc' + adj + ' pants';
-  	console.log(newName); 
+	console.log(newName); 
 };	
 					</pre></code>
 
@@ -383,7 +371,7 @@ add(3, 10);//13
 var nameLogger = function (name, adj) {
 	if(!name) var name = "Anonymous";
 	var newName = 'Col ' + name + ' Mc' + adj + ' pants';
-  	console.log(newName); 
+	console.log(newName); 
 };
 					</pre></code>
 
@@ -436,7 +424,7 @@ function blender(fruit) {
   var y = 'yogurt';
  
   function bs() { 
-    alert( b + ' and ' + y + ' makes ' + b + ' swirl'); 
+	alert( b + ' and ' + y + ' makes ' + b + ' swirl'); 
   } 
   bs(); 
 } 
@@ -473,25 +461,38 @@ alert(g + " outside go");
 
 		<!-- CodeMirror Init -->
 		<script>
-            window.onload = function() {
-                window.editor = CodeMirror.fromTextArea(code, {
-                    mode: "javascript",
-                    lineNumbers: true,
-                    lineWrapping: true,
-                    extraKeys: {
-                        //key binding for toggle full screen on/off
-                        "F11": function(cm) {
-                            cm.setOption("fullScreen", !cm.getOption("fullScreen"));
-                        },
-                        //key binding for switch full screen off
-                        "Esc": function(cm) {
-                            if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
-                        }
-                    }
-                });
-            };
-        </script>
-        <!-- /CodeMirror -->
+			window.onload = function() {
+				$('textarea').each(function(elem) {
+					var textArea = this;
+					$(textArea).attr('tabIndex', 0);
+
+					var codeMirrorOpts = {
+						// lineNumbers: true,
+						mode: "javascript"
+						// matchBrackets: true
+					}
+
+				var editor = CodeMirror.fromTextArea(textArea, codeMirrorOpts);
+				$(editor.getWrapperElement()).keydown(function(e) {
+					e.stopPropagation();
+				});
+
+				if ($(textArea).hasClass('runnable')) {
+					var button = $('<button class="btn run-button">Run!</button>');
+					button.click(function() {
+
+					  var code = editor.getValue();
+					  window.eval(code);
+					  
+					});
+					$(this).after(button);
+				}
+				// console.log(editor);
+			  });
+			};
+
+		</script>
+		<!-- /CodeMirror -->
 
 		<script>
 
