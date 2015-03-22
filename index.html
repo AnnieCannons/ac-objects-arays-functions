@@ -275,13 +275,13 @@ var doll = {
 	innerDoll: { size: "medium"}
 };
 
-doll.innerDoll.innerInnerDoll = {size: small};
+doll.innerDoll.innerDoll = {size: small};
 
 console.log(doll);
 
 					</code></pre>
 				</section>
-				<section>
+				<!-- <section>
 					<pre><code data-trim>
 
 var zoo = {
@@ -291,7 +291,7 @@ var zoo = {
 zoo.fox["3 fav foods"];
 
 					</pre></code>
-				</section>
+				</section> -->
 				<section>
 					<h3>Iterating Objects</h3>
 					<pre><code data-trim>
@@ -310,7 +310,7 @@ for(var key in zoo) {
 
 				</section>
 				<section>
-					<h3><a href="https://jsfiddle.net/yonet3d/zmr6gqze/" target="_blank">Exercise Time</a></h3>
+					<h3><a href="https://repl.it/enn" target="_blank">Exercise Time</a></h3>
 				</section>
 				<!-- /Nested Objects -->
 
@@ -323,7 +323,7 @@ var add = function(a, b) {
 	return a + b;
 };
 
-add(5,4);
+add(5, 4);
 
 					</pre></code>
 					<aside class="notes">
@@ -340,7 +340,9 @@ add(5,4);
 					<pre><code data-trim>
 
 var nameImprover = function (name, adj) {
-  return 'Col ' + name + ' Mc' + adj + ' pants';
+
+	return 'Col ' + name + ' Mc' + adj + ' pants';
+
 };	
 
 					</pre></code>
@@ -350,10 +352,11 @@ var nameImprover = function (name, adj) {
 					<pre><code data-trim>
 
 var nameImprover = function (name, adj) {
-  return 'Col ' + name + ' Mc' + adj + ' pants';
+	return 'Col ' + name + ' Mc' + adj + ' pants';
 };	
 
-nameImprver("Pamela", "fancy");
+nameImprover("Pamela", "fancy");
+
 					</pre></code>
 				</section>
 				<section>
@@ -361,7 +364,7 @@ nameImprver("Pamela", "fancy");
 					<pre><code data-trim>
 
 var nameImprover = function (name, adj) {
-  return 'Col ' + name + ' Mc' + adj + ' pants';
+	return 'Col ' + name + ' Mc' + adj + ' pants';
 };	
 
 nameImprover("Pamela", "shiny");
@@ -374,7 +377,7 @@ nameImprover("Aysegul", "fancy");
 					<pre><code data-trim>
 
 var nameImprover = function (name, adj) {
-  return 'Col ' + name + ' Mc' + adj + ' pants';
+	return 'Col ' + name + ' Mc' + adj + ' pants';
 };	
 
 var nameLogger = function (name, adj) {
@@ -389,12 +392,30 @@ var nameLogger = function (name, adj) {
 					<h3>arguments Keyword</h3>
 					<pre><code data-trim>
 
-var add = function(a, b){
-	console.log(arguments); //logs [3,10]
+var addTwo = function(a, b) {
+	console.log(arguments); // logs [3,10]
 	return a + b; 
 };
 
-add(3, 10);//13	
+addTwo(3, 10); // 13	
+
+					</pre></code>
+
+				</section>
+				<section>
+				<h3>arguments Keyword</h3>
+					<pre><code data-trim>
+
+var addMany = function() {
+	console.log(arguments);
+	var sum = 0;
+	for (var i = 0; i &lt; argumment.length; i++) {
+		sum += i;
+	}
+	return sum;
+};
+
+addMany(3, 10, 57,...);
 
 					</pre></code>
 
@@ -403,8 +424,8 @@ add(3, 10);//13
 					<h3>Defaulting Arguments</h3>
 					<pre><code data-trim>
 
-var nameLogger = function (name, adj) {
-	if(!name) var name = "Anonymous";
+var nameLogger = function(name, adj) {
+	if(adj === undefined) adj = "Fancy";
 	var newName = 'Col ' + name + ' Mc' + adj + ' pants';
 	console.log(newName); 
 };
@@ -413,7 +434,7 @@ var nameLogger = function (name, adj) {
 
 				</section>
 				<section>
-					<h3><a href="https://jsfiddle.net/yonet3d/qg85rm8q/" target="_blanl">Exercise Time</a></h3>
+					<h3><a href="https://repl.it/enq" target="_blanl">Exercise Time</a></h3>
 				</section>
 				<section>
 					<h3>Scope</h3>
