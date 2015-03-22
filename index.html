@@ -52,7 +52,7 @@ This workshop will be a traditional format, a combination of live lectures and e
 						<li>[Arrays]</li>
 						<li>And Function(s){...}</li>
 					</ul>
-					<p>Slides: <a href="http://yonet.github.io/JS102/">yonet.github.io/JS102/</a></p>
+					<p>Slides: http://bit.ly/JS102</p>
 				</section>
 				<!-- /Welcome -->
 				
@@ -443,8 +443,9 @@ var nameLogger = function(name, adj) {
 					<h3>Local Scope</h3>
 					<pre><code data-trim>
 
-var func = function(){
+var func = function() {
   var local = true;
+  console.log(local);
 };
 
 console.log(local);
@@ -457,7 +458,7 @@ console.log(local);
 
 var global = "I'm available everywhere.";
 
-var func = function(){
+var func = function() {
   var local = "I'm available inside this function.";
   console.log("I'm available inside the function ", global);
 };
@@ -471,7 +472,7 @@ console.log(global);
 
 var global = "I'm available everywhere.";
 
-var func = function(){
+var func = function() {
   local = "I'm available everywhere too";
 };
 
@@ -480,23 +481,7 @@ console.log(local);
 					</code></pre>
 					
 				</section>
-				<section>
-					<pre><code data-trim>
-
-function blender(fruit) { 
-  var b = fruit; 
-  var y = 'yogurt';
- 
-  function bs() { 
-	alert( b + ' and ' + y + ' makes ' + b + ' swirl'); 
-  } 
-  bs(); 
-} 
-
-blender('blueberry');
-
-					</code></pre>
-				</section>
+				
 				<section>
 					<h3>Precedence</h3>
 					<pre><code data-trim>
