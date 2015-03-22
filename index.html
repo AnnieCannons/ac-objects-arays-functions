@@ -46,11 +46,13 @@ This workshop will be a traditional format, a combination of live lectures and e
 				<!-- Welcome -->
 				<section>
 					<h3>Welcome to JS102</h3>
+
 					<ul>
 						<li>{Objects}</li>
 						<li>[Arrays]</li>
 						<li>And Function(s){...}</li>
 					</ul>
+					<p>Slides: <a href="http://yonet.github.io/JS102/">yonet.github.io/JS102/</a></p>
 				</section>
 				<!-- /Welcome -->
 				
@@ -133,7 +135,9 @@ for(var i = 0; i &lt; classes.length; i++){
 var angelTheCat = {};
 
 angelTheCat.furColor = "orange";
+
 //OR
+
 var angelTheCat = {"furColor" : "orange"};
 
 					</code></pre>
@@ -226,12 +230,12 @@ var angelTheCat = {
 					<h3>Arrays of Objects</h3>
 					<pre><code data-trim>
 
-var theAngelCats = [
+var cuteCats = [
 
 		{ name: "Angel", age: 18, furColor: "grey" },
 		{ name: "Evil", age: 14, furColor: "red" },
 		{ name: "Meh", age: 12, "Fur Color": "white" }
-		
+
 	]
 
 					</code></pre>
@@ -239,14 +243,16 @@ var theAngelCats = [
 				<section>
 				<pre><code data-trim>
 
-theAngelCats[0].name = ;//?
+cuteCats[0].name = ;//?
 
-theAngelCats[2]["Fur Color"] = ;//?
+cuteCats[1]furColor;//?
+
+cuteCats[2]["Fur Color"] = ;//?
 
 					</code></pre>
 				</section>
 				<section>
-					<h3><a href="https://jsfiddle.net/yonet3d/j0aebpc7/1/" target="_blank">Exercise Time</a></h3>
+					<h3><a href="https://repl.it/enc/4" target="_blank">Exercise Time</a></h3>
 					<a href="http://en.wikipedia.org/wiki/List_of_animal_sounds" target="_blank">A Useful Link</a>
 				</section>
 				<!-- /Arrays of Objects -->
@@ -257,7 +263,7 @@ theAngelCats[2]["Fur Color"] = ;//?
 					<img src="images/nested.jpeg" alt="nested">
 					<pre><code data-trim>
 
-var angelTheCat = { "innerAngelTheCat" : {} };
+var doll = { "innerDoll" : {} };
 
 					</code></pre>
 				</section>
@@ -266,7 +272,7 @@ var angelTheCat = { "innerAngelTheCat" : {} };
 
 var doll = {
 	size: "large",
-	innerDoll : { size: medium}
+	innerDoll: { size: "medium"}
 };
 
 doll.innerDoll.innerInnerDoll = {size: small};
