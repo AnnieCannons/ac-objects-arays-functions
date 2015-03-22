@@ -58,7 +58,9 @@ This workshop will be a traditional format, a combination of live lectures and e
 				<section>
 					<h3>Arrays</h3>
 					<pre><code data-trim>
-						var coolArray = ["Pamela", "Bianca", "Brenda", "Aysegul"];
+
+						var coolTeachers = ["Pamela", "Bianca", "Brenda", "Aysegul"];
+
 					</code></pre>
 					<aside class="notes">
 						q: How long is it? 
@@ -73,13 +75,13 @@ This workshop will be a traditional format, a combination of live lectures and e
 					
 					<pre><code data-trim>
 
-var box = [];
+var classes = [];
 
-box[0] = 'woof';						
-box[1] = 'meow';
+classes[0] = 'HTML 101';						
+classes[1] = 'JS 101';
 
-box.push['moo'];
-box.pop();
+classes.push['JS 102'];
+classes.pop();
 
 					</code></pre>
 					<!-- <button>Run</button> -->
@@ -90,22 +92,22 @@ box.pop();
 					<pre><code data-trim>
 
 var i = 0;
-box[i]; // ??
+classes[i]; // ??
 
-box[1];
+classes[1];
 
-box.pop(); //??
+classes.pop(); //??
 
-box.length;
+classes.length;
 					</code></pre>
 				</section>
 				<section>
 					<h3>Iteration</h3>
 					<pre><code data-trim>
 
-var box = ['meow', 'Whoohooo!'];
+var classes = ['HTML 101', 'JS 101', 'JS 102'];
 
-for(var i = 0; i < box.length; i++){
+for(var i = 0; i &lt; classes.length; i++){
 						
 	console.log(i); //??
 						
@@ -114,7 +116,7 @@ for(var i = 0; i < box.length; i++){
 
 				</section>
 				<section>
-					<h3><a href="https://jsfiddle.net/yonet3d/p82g5mv1/" target="_blank">Exercise Time</a></h3>
+					<h3><a href="http://repl.it/enc/1" target="_blank">Exercise Time</a></h3>
 
 				</section>
 				<!-- /Arrays -->
@@ -128,11 +130,11 @@ for(var i = 0; i < box.length; i++){
 					<h3>Assignment</h3>
 					<pre><code data-trim>
 
-var box = {};
+var angelTheCat = {};
 
-box.material = "cardboard";
+angelTheCat.furColor = "orange";
 //OR
-var box = {"material" : "cardboard"};
+var angelTheCat = {"furColor" : "orange"};
 
 					</code></pre>
 					<aside class="notes">
@@ -146,15 +148,15 @@ var box = {"material" : "cardboard"};
 					<h3>Access w/dots</h3>
 					<pre><code data-trim>
 
-var box = {};
+var angelTheCat = {};
 						
-box.material = "cardboard";
+angelTheCat.furColor = "orange";
 						
-var cb = box.material;
+var cb = angelTheCat.furColor;
 
 cb; //??
 
-box.material = "titanium";
+angelTheCat.furColor = "orange";
 
 cb; //??
 					</code></pre>
@@ -167,23 +169,26 @@ cb; //??
 					<h3>Brackets</h3>
 					<pre><code data-trim>
 
-box["material type"] = "cardboard";
+angelTheCat["fur color"] = "orange";
 
-box["1234"] = 1234;
+
+var facebookFriends = {};
+facebookFriends[12323] = angelTheCat;
 
 					</code></pre>
 				</section>
 				<section>
 					<h3>Variables</h3>
 					<pre><code data-trim>
-var box = {};
+var angelTheCat = {};
 						
-box["material"] = "cardboard";
+angelTheCat["furColor"] = "orange";
 						
 						
-var key = "material";
+var key = "furColor";
 						
-box[key]; //??
+angelTheCat[key]; //??
+
 					</code></pre>
 				</section>
 				<section>
@@ -191,8 +196,8 @@ box[key]; //??
 					<pre><code data-trim>
 
 var angelTheCat = { 
-	age: 18, 
-	furColor: "grey"
+	age: 5, 
+	furColor: "orange"
 }; 
 
 					</code></pre>
@@ -202,17 +207,17 @@ var angelTheCat = {
 					<pre><code data-trim>
 
 var angelTheCat = { 
-	age: 18, 
-	furColor: "grey", 
+	age: 5, 
+	furColor: "orange", 
 	isAngelic: true, 
 	likes: ["catnip", "milk"], 
-	birthday: {"month": 7, "day": 17, year: 1994} 
+	birthday: {"month": 7, "day": 17, year: 2009} 
 }; 
 
 					</code></pre>
 				</section>
 				<section>
-					<h3><a href="http://jsfiddle.net/yonet3d/hpmwg1xy/" target="_blank">Exercise Time</a></h3>
+					<h3><a href="http://repl.it/enc/2" target="_blank">Exercise Time</a></h3>
 				</section>
 				<!-- /Objects -->
 
@@ -222,9 +227,11 @@ var angelTheCat = {
 					<pre><code data-trim>
 
 var theAngelCats = [
+
 		{ name: "Angel", age: 18, furColor: "grey" },
 		{ name: "Evil", age: 14, furColor: "red" },
 		{ name: "Meh", age: 12, "Fur Color": "white" }
+		
 	]
 
 					</code></pre>
@@ -250,7 +257,7 @@ theAngelCats[2]["Fur Color"] = ;//?
 					<img src="images/nested.jpeg" alt="nested">
 					<pre><code data-trim>
 
-var box = { "innerBox" : {} };
+var angelTheCat = { "innerAngelTheCat" : {} };
 
 					</code></pre>
 				</section>
@@ -262,9 +269,10 @@ var doll = {
 	innerDoll : { size: medium}
 };
 
-box.innerDoll.innerInnerDoll = {size: small};
+doll.innerDoll.innerInnerDoll = {size: small};
 
 console.log(doll);
+
 					</code></pre>
 				</section>
 				<section>
