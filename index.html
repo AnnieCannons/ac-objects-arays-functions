@@ -156,13 +156,13 @@ var angelTheCat = {};
 						
 angelTheCat.furColor = "orange";
 						
-var cb = angelTheCat.furColor;
+var furVariable = angelTheCat.furColor;
 
-cb; //??
+furVariable; //??
 
 angelTheCat.furColor = "grey";
 
-cb; //??
+furVariable; //??
 					</code></pre>
 										
 					<aside class="notes">
@@ -215,7 +215,7 @@ var angelTheCat = {
 	furColor: "orange", 
 	isAngelic: true, 
 	likes: ["catnip", "milk"], 
-	birthday: {"month": 7, "day": 17, year: 2009} 
+	birthday: {"month": 7, "day": 17, "year": 2009} 
 }; 
 
 					</code></pre>
@@ -252,6 +252,22 @@ cuteCats[2]["Fur Color"] = ;//?
 					</code></pre>
 				</section>
 				<section>
+					<h3>Iterating Objects</h3>
+					<pre><code data-trim>
+
+var zoo = {
+	birds : 3,
+	bears: 5,
+	cats: 12,
+}
+
+for(var key in zoo) {
+	console.log(zoo[key] + ' ' + key);
+}
+
+					</pre></code>
+				</section>
+				<section>
 					<h3><a href="http://repl.it/erX" target="_blank">Exercise Time</a></h3>
 					<a href="http://en.wikipedia.org/wiki/List_of_animal_sounds" target="_blank">A Useful Link</a>
 				</section>
@@ -275,40 +291,14 @@ var doll = {
 	innerDoll: { size: "medium"}
 };
 
-doll.innerDoll.innerDoll = {size: small};
+doll.innerDoll.innerDoll = {size: "small"};
 
 console.log(doll);
 
 					</code></pre>
 				</section>
-				<!-- <section>
-					<pre><code data-trim>
 
-var zoo = {
-	fox : {"3 fav foods": ["apple", "broccoli", "brussel sprouts"]}
-}
-
-zoo.fox["3 fav foods"];
-
-					</pre></code>
-				</section> -->
-				<section>
-					<h3>Iterating Objects</h3>
-					<pre><code data-trim>
-
-var zoo = {
-	birds : 3,
-	bears: 5,
-	cats: 12,
-}
-
-for(var key in zoo) {
-	console.log(zoo[key], key);
-}
-
-					</pre></code>
-
-				</section>
+				
 				<section>
 					<h3><a href="https://repl.it/enn" target="_blank">Exercise Time</a></h3>
 				</section>
